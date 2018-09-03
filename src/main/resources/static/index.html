@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ebay</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="/images/ebay.png" >
+
+        <link rel="stylesheet" href="/css/app.css">
+
+        <!-- JQuery -->
+        <script src="/webjars/jquery/1.11.3/jquery.js"></script>
+
+
+        <!-- Angular -->
+        <script src="/webjars/angularjs/1.5.9/angular.js"></script>
+        <script src="/webjars/angularjs/1.5.9/angular-animate.js"></script>
+        <script src="/webjars/angularjs/1.5.9/angular-resource.js"></script>
+        <script src="/webjars/angularjs/1.5.9/angular-route.js"></script>
+
+        <!-- Bootstrap -->
+        <script src="/webjars/angular-ui-bootstrap/0.14.3/ui-bootstrap.js"></script>
+        <script src="/webjars/angular-ui-bootstrap/0.14.3/ui-bootstrap-tpls.js"></script>
+        <script src="/webjars/bootstrap/3.3.6/js/bootstrap.js"></script>
+        <link rel="stylesheet" href="/webjars/bootstrap/3.3.6/css/bootstrap.css">
+
+        <script src="/js/app.js"></script>
+        <script src="/js/controllers.js"></script>
+        <script src="/js/services.js"></script>
+        <script src="/js/directives.js"></script>
+    </head>
+
+    <body ng-app="app">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                        <div class="input-group stylish-input-group search" ng-controller="TypeAheadController">
+
+                            <input type="text"
+                                   class="form-control"
+                                   placeholder="Input something"
+                                   ng-model="word"
+                                   ng-blur="onBlur()"
+                                   ng-change="onChange()"
+                                   typeahead="p for p in predictions | filter:$viewValue | limitTo:8">
+
+                            <span id="search-button" class="input-group-addon">
+                                <button call-route="/dummy">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                            </span>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
